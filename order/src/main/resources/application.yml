@@ -1,0 +1,20 @@
+###服务的端口号
+server:
+  port: 8000
+
+###服务名称（注册到eureka名称）
+spring:
+  application:
+    name: app-order
+eureka:
+  instance:
+    ###注册中心IP地址
+    homename: 127.0.0.1
+  client:
+    service-url:
+      ###注册地址
+      defaultZone: http://127.0.0.1:8100/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+

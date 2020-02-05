@@ -1,0 +1,26 @@
+###服务的端口号
+server:
+  port: 8011
+
+###服务名称（注册到eureka名称）
+spring:
+  application:
+    name: app-member
+eureka:
+  instance:
+    ###注册中心IP地址
+    homename: 127.0.0.1
+
+    #心跳检测与持续时间
+    #测试时候将值设置小点，单位为秒
+
+    #Eureka服务端在收到最后一次心跳之后等待的时间上限，单位为秒，超过则剔除
+    lease-expiration-duration-in-seconds: 2
+    #Eureka客户端向服务端发送心跳的时间间隔，单位为秒
+    lease-renewal-interval-in-seconds: 1
+  client:
+    service-url:
+      ###注册地址
+      defaultZone: http://127.0.0.1:8100/eureka
+    register-with-eureka: true
+    fetch-registry: true
